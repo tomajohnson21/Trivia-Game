@@ -8,6 +8,7 @@ var timer;
 var startDisplay = $("#start-box");
 var questionDisplay = $("#question-box");
 var endDisplay = $("#end-box");
+var timer;
 
 var questionList = [
     
@@ -73,10 +74,29 @@ var renderButtons = function(question){
     }
 }
 
+var countdown = function() {
+    if(time === 0) {
+        clearInterval(timer);
+        getNextQuestion();
+        console.log("Times up"); 
+        score--;
+        unanswered++;
+    } else {
+        time--;
+        console.log(time);
+    }
+}
+
+var setTimer = function() {
+    time = 10;
+    timer = setInterval(function(){countdown()}, 1000);
+}
+
 var updateDisplay = function(currentQuestion){
     $("#question-label").text("Question " + questionCount);
     $("#current-question").text(currentQuestion.question)
     renderButtons(currentQuestion);
+    setTimer();
 }
 
 var checkAnswer = function(selection){
@@ -104,7 +124,7 @@ var resetQuestions = function(){
 
 var showResults = function() {
     $("#score").text("Score: " + score);
-    $("#corrrect").text("Correct: " + correct);
+    $("#correct").text("Correct: " + correct);
     $("#incorrect").text("Incorrect: " + incorrect);
     $("#unanswered").text("Unanswered: " + unanswered);
 }
@@ -126,6 +146,7 @@ var  getNextQuestion = function(){
         }
     } else {
         questionDisplay.hide();
+        clearInterval(timer);
         showResults();
         endDisplay.show();
     }
@@ -150,6 +171,7 @@ $(document).ready(function(){
     });
 
     $(document).on("click", ".choice", function(){
+        clearInterval(timer);
         selection = $(this).attr("val");
         checkAnswer(selection);
     });
