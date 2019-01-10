@@ -94,6 +94,7 @@ var setTimer = function() {
 }
 
 var updateDisplay = function(currentQuestion){
+    $("#time").text("Time Left: 15s")
     $("#question-label").text("Question " + questionCount);
     $("#current-question").text(currentQuestion.question)
     renderButtons(currentQuestion);
