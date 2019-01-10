@@ -83,12 +83,13 @@ var countdown = function() {
         unanswered++;
     } else {
         time--;
+        $("#time").text("Time Left: " + time + "s")
         console.log(time);
     }
 }
 
 var setTimer = function() {
-    time = 10;
+    time = 15;
     timer = setInterval(function(){countdown()}, 1000);
 }
 

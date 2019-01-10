@@ -10,33 +10,56 @@
 <body>
     <div class="container">
         <div class="jumbotron display" id="start-box">
-            <h3>Welcome to Classic Movie Trivia!</h3>
-            <p>You will have 10 seconds to answer each question.</p>
-            <p>See if you can get them all right.</p>
-
-            <button class="btn btn-dark" id="start-button">Start Quiz</button>
-        </div>
-
-        <div class="jumbotron display" id="question-box">
-
-            <h4 id ="time"></h3>
             
-            <h2 id="question-label"></h2>
-            
-            <p id="current-question"></p>
+            <div class="content">
                 
-            <div class="button-holder" id="choices"></div>
+                <div class="row">
+
+                    <h3>Welcome to Classic Movie Trivia!</h3>
+                </div>
+
+                <div class="row">
+                    
+                    <p>You will have 15 seconds to answer each question.</p>
+                </div>
+
+                <div class="row">
+                    
+                    <p>See if you can get them all right.</p>
+                </div>
+
+                <div class="row">
+
+                    <button class="btn btn-dark" id="start-button">Start Quiz</button>
+                </div>
+            </div>
         </div>
 
-        <div class="jumbotron display" id="end-box">
+        <div class="content">
+            <div class="jumbotron display" id="question-box">
 
-            <h2>Thank you for playing, here are your results!</h2>
+                
+                <h4 id ="time"></h3>
+                
+                <h2 id="question-label"></h2>
+                
+                <p id="current-question"></p>
                     
-            <div id="results">
-                <p id="score"></p>
-                <p id="correct"></p>
-                <p id="incorrect"></p>
-                <p id="unanswered"></p>
+                <div class="button-holder" id="choices"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="jumbotron display" id="end-box">
+
+                <h2>Thank you for playing, here are your results!</h2>
+                        
+                <div id="results">
+                    <p id="score"></p>
+                    <p id="correct"></p>
+                    <p id="incorrect"></p>
+                    <p id="unanswered"></p>
+                </div>
             </div>
         </div>
     </div>
